@@ -12,7 +12,7 @@ async def get_fetchur(message):
     await message.channel.send(item)
 
 @client.event
-def on_message(message):
+async def on_message(message):
 
     if message.author == client.user:
             return
