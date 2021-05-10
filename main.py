@@ -6,7 +6,6 @@ client = discord.Client()
 async def get_fetchur(message):
     fandom.set_wiki("hypixel-skyblock")
     page = fandom.page(title = "Fetchur")
-    sections = page.sections
     daily = page.section("Current Request")
     item = daily[daily.find(")")+1:]
     await message.channel.send(item)
