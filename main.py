@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
             return
 
-    if message.content.startswith("*fetchur"):
+    if message.content.startswith("*fetchur") or message.content.startswith("*f"):
         await get_fetchur(message)
 
 client.run("token")
