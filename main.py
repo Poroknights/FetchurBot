@@ -8,7 +8,7 @@ async def get_fetchur(message):
     page = fandom.page(title = "Fetchur")
     daily = page.section("Current Request")
     item = daily[daily.find(")")+1:]
-    await message.channel.send(item)
+    await message.channel.send("Today's item i need is " + "item)
 
 @client.event
 async def on_message(message):
