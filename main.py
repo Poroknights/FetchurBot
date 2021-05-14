@@ -1,6 +1,7 @@
 import fandom
 import discord
-
+from datetime import datetime
+from discord import Embed
 client = discord.Client()
 
 async def get_fetchur(message):
@@ -8,7 +9,10 @@ async def get_fetchur(message):
     page = fandom.page(title = "Fetchur")
     daily = page.section("Current Request")
     item = daily[daily.find(")")+1:]
-    await message.channel.send("Today's item i need is " + "item)
+    now = datetime.now()
+    current_time = now.strftime("%I:%M %p")
+    fEmbed = discord.Embed(title = item, description = "Today's item Fetchur needs is " + item + " " + current_time + " UTC +1", color = 0xBA55D3)
+    await message.channel.send(embed = fEmbed)
 
 @client.event
 async def on_message(message):
